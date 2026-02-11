@@ -8,14 +8,14 @@ const CTASection = () => {
           Schedule Your FREE Crawl Space Inspection in Nashville, Tennessee
         </h2>
         <p className="text-primary-foreground/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-          Homeowners in the Nashville area can depend on Crawl Space Brothers for all of their crawl space waterproofing and encapsulation needs. If you think you have a problem with your crawl space, reach out to our office today.
+          Homeowners in the Nashville area can depend on Nashville Home Improvements for all of their crawl space waterproofing and encapsulation needs. If you think you have a problem with your crawl space, reach out to our office today.
         </p>
         <a
-          href="tel:+16154362325"
+          href="tel:+14053349493"
           className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-heading font-bold text-xl px-8 py-4 rounded-lg hover:bg-secondary/90 transition-colors shadow-lg"
         >
           <Phone className="w-6 h-6" />
-          (629) 249-8519
+          (405) 334-9493
         </a>
         <p className="text-primary-foreground/70 text-sm mt-3">
           Call us today for service to your home in Nashville, Tennessee and the surrounding areas.
