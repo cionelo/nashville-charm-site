@@ -1,11 +1,11 @@
 import { Phone, Clock, Star, DollarSign, ShieldCheck } from "lucide-react";
 
+
 const highlights = [
   { icon: ShieldCheck, text: "Zero Contact Service" },
   { icon: Clock, text: "OPEN • 8AM-6PM • 7 Days a Week" },
   { icon: Star, text: "Recommended By Our Local Realtor® Partners" },
   { icon: DollarSign, text: "FREE Estimates" },
-  { icon: DollarSign, text: "18-Month No Interest Offer" },
 ];
 
 const TrustedExpertsSection = () => {
@@ -14,14 +14,14 @@ const TrustedExpertsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-lg font-heading font-semibold text-primary uppercase tracking-wider mb-2">
-            Crawl Space Repair Experts Trusted in Nashville TN & the Surrounding Areas
+            Crawl Space Repair Experts Trusted in Middle Tennessee
           </h3>
           <a
-            href="tel:+16154362325"
+            href="tel:+14053349493"
             className="inline-block text-3xl md:text-4xl font-heading font-extrabold text-accent hover:text-primary transition-colors mb-8"
           >
             <Phone className="inline w-7 h-7 mr-2 -mt-1" />
-            (629) 249-8519
+            (405) 334-9493
           </a>
           <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 text-section-alt-foreground">
             {highlights.map((item) => (

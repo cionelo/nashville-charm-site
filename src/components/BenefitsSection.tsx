@@ -24,7 +24,7 @@ const BenefitsSection = () => {
             <a href="#" className="text-accent font-semibold hover:underline">
               Waterproofing your crawl space
             </a>{" "}
-            is the perfect way to avoid all of these problems. When you call Crawl Space Brothers to waterproof your crawl space, our certified technicians will review the solution which best addresses the challenges facing your crawlspace.
+            is the perfect way to avoid all of these problems. When you call Nashville Home Improvements to waterproof your crawl space, our certified technicians will review the solution which best addresses the challenges facing your crawlspace.
           </p>
           <h3 className="text-xl font-heading font-bold text-foreground mb-4">
             Key Benefits Include:

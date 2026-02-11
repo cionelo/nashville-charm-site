@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "How Much Does Crawl Space Repair Cost?",
-    a: "The cost of crawl space repair can vary depending on the severity of the damage and the size of your crawl space. However, our team at Crawl Space Brothers always provides a free estimate so that you know exactly what the cost will be before we begin any work.",
+    a: "The cost of crawl space repair can vary depending on the severity of the damage and the size of your crawl space. However, our team at Nashville Home Improvements always provides a free estimate so that you know exactly what the cost will be before we begin any work.",
   },
   {
     q: "How Long Will Crawl Space Repair Take?",

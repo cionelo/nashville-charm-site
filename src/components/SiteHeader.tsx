@@ -4,11 +4,8 @@ import { Phone, MapPin, Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Home", href: "#" },
   { label: "Services", href: "#services" },
-  { label: "Locations", href: "#locations" },
   { label: "Learning Center", href: "#" },
   { label: "About Us", href: "#about" },
-  { label: "Blog", href: "#" },
-  { label: "Financing", href: "#" },
   { label: "Contact Us", href: "#contact" },
 ];
 
@@ -17,20 +14,20 @@ const TopBar = () => (
     <div className="container mx-auto flex flex-col md:flex-row items-center justify-between py-3 px-4 gap-3">
       <div className="flex items-center gap-6">
         <span className="font-heading text-xl font-extrabold tracking-tight text-primary">
-          CRAWL SPACE BROTHERS
+          NASHVILLE HOME IMPROVEMENTS
         </span>
         <span className="hidden md:flex items-center gap-1.5 text-sm text-secondary-foreground/80">
           <MapPin className="w-4 h-4 text-primary" />
-          5233 Harding Pl Suite 5243, Nashville, TN 37217
+          710 Cleo Miller Dr, East Nashville, TN 37206
         </span>
       </div>
       <div className="flex items-center gap-4">
         <a
-          href="tel:+16154362325"
+          href="tel:+14053349493"
           className="flex items-center gap-2 text-accent font-heading font-bold text-lg md:text-2xl hover:text-primary transition-colors"
         >
           <Phone className="w-5 h-5" />
-          (615) 436-2325
+          (405) 334-9493
         </a>
         <a
           href="#schedule"

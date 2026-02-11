@@ -1,20 +1,10 @@
-import { Star, ShieldCheck, DollarSign, Heart } from "lucide-react";
+import { Star, Heart } from "lucide-react";
 
 const guarantees = [
   {
     icon: Star,
     title: "5-Star Guarantee",
     text: "If you're not happy with our crawl space repair, we'll make it right – ASAP!",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Lifetime Transferable Warranty",
-    text: "If something goes wrong with a service that we provide, we will make sure it gets fixed quickly.",
-  },
-  {
-    icon: DollarSign,
-    title: "18-Month No Interest Offer",
-    text: "Flexible financing options available to fit your budget.",
   },
   {
     icon: Heart,
@@ -30,7 +20,7 @@ const GuaranteesSection = () => {
         <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10">
           Our Guarantees
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {guarantees.map((g) => (
             <div
               key={g.title}

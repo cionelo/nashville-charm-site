@@ -1,5 +1,5 @@
 import { ShieldCheck } from "lucide-react";
-import InspectionForm from "./InspectionForm";
+
 
 const services = [
   "Crawl Space Encapsulation",
@@ -35,17 +35,13 @@ const IntroSection = () => {
               </p>
               <p>
                 <a href="#" className="text-accent font-semibold hover:underline">
-                  Crawl Space Brothers
-                </a>{" "}
-                is proud to be the market leader in protecting and repairing Nashville homeowners' crawl spaces. Our team of certified technicians will carefully investigate any problem in your crawl space in order to find the right solution for your home. And because we offer a{" "}
-                <a href="#" className="text-accent font-semibold hover:underline">
-                  Lifetime Transferrable Warranty
-                </a>{" "}
-                and{" "}
-                <a href="#" className="text-accent font-semibold hover:underline">
-                  5 Star Experience
-                </a>
-                , you get peace of mind from knowing that your home is being treated the right way.
+                Nashville Home Improvements
+              </a>{" "}
+              is proud to be the market leader in protecting and repairing Nashville homeowners' crawl spaces. Our team of certified technicians will carefully investigate any problem in your crawl space in order to find the right solution for your home. We provide a{" "}
+              <a href="#" className="text-accent font-semibold hover:underline">
+                5 Star Experience
+              </a>
+              , giving you peace of mind from knowing that your home is being treated the right way.
               </p>
             </div>
 
@@ -66,10 +62,6 @@ const IntroSection = () => {
             </div>
           </div>
 
-          {/* Sidebar form */}
-          <div className="lg:w-[380px] flex-shrink-0 lg:-mt-32 relative z-10">
-            <InspectionForm />
-          </div>
         </div>
       </div>
     </section>
