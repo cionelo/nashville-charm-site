@@ -1,4 +1,5 @@
 import { Phone, MapPin, Facebook, Youtube, Instagram } from "lucide-react";
+import nhiLogo from "@/assets/nhi-logo.png";
 
 const serviceLinks = [
   "Encapsulation", "Waterproofing", "Dehumidifier", "Vapor Barrier",
@@ -16,9 +17,12 @@ const SiteFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <h3 className="font-heading text-xl font-extrabold text-primary mb-4">
-              NASHVILLE HOME IMPROVEMENTS
-            </h3>
+            <a href="#" className="flex items-center gap-3 mb-4">
+              <img src={nhiLogo} alt="Nashville Home Improvements" className="h-10 w-10 rounded-full" />
+              <h3 className="font-heading text-xl font-extrabold text-primary">
+                NASHVILLE HOME IMPROVEMENTS
+              </h3>
+            </a>
             <a
               href="tel:+14053349493"
               className="flex items-center gap-2 text-accent font-heading font-bold text-lg mb-3 hover:text-primary transition-colors"

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, MapPin, Menu, X } from "lucide-react";
+import nhiLogo from "@/assets/nhi-logo.png";
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -13,9 +14,12 @@ const TopBar = () => (
   <div className="bg-secondary text-secondary-foreground">
     <div className="container mx-auto flex flex-col md:flex-row items-center justify-between py-3 px-4 gap-3">
       <div className="flex items-center gap-6">
-        <span className="font-heading text-xl font-extrabold tracking-tight text-primary">
-          NASHVILLE HOME IMPROVEMENTS
-        </span>
+        <a href="#" className="flex items-center gap-3">
+          <img src={nhiLogo} alt="Nashville Home Improvements" className="h-10 w-10 rounded-full" />
+          <span className="font-heading text-xl font-extrabold tracking-tight text-primary">
+            NASHVILLE HOME IMPROVEMENTS
+          </span>
+        </a>
         <span className="hidden md:flex items-center gap-1.5 text-sm text-secondary-foreground/80">
           <MapPin className="w-4 h-4 text-primary" />
           710 Cleo Miller Dr, East Nashville, TN 37206

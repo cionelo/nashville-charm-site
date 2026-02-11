@@ -3,8 +3,8 @@ import { Phone, Clock, Star, DollarSign, ShieldCheck } from "lucide-react";
 
 const highlights = [
   { icon: ShieldCheck, text: "Zero Contact Service" },
-  { icon: Clock, text: "OPEN • 8AM-6PM • 7 Days a Week" },
-  { icon: Star, text: "Recommended By Our Local Realtor® Partners" },
+  { icon: Clock, text: "OPEN • 7AM-7PM • 7 Days a Week" },
+  { icon: Star, text: "Affordable Prices By Local Small Business" },
   { icon: DollarSign, text: "FREE Estimates" },
 ];
 
