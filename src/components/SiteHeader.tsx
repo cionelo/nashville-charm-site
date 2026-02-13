@@ -4,23 +4,23 @@ import { Phone, MapPin, Menu, X } from "lucide-react";
 import nhiLogo from "@/assets/nhi-logo.png";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#services" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
   { label: "Learning Center", href: "/learning-center" },
-  { label: "About Us", href: "#about" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "About Us", href: "/#about" },
+  { label: "Contact Us", href: "/#contact" },
 ];
 
 const TopBar = () => (
   <div className="bg-secondary text-secondary-foreground">
     <div className="container mx-auto flex flex-col md:flex-row items-center justify-between py-3 px-4 gap-3">
       <div className="flex items-center gap-6">
-        <a href="#" className="flex items-center gap-3">
-          <img src={nhiLogo} alt="Nashville Home Improvements" className="h-10 w-10 rounded-full" />
-          <span className="font-heading text-xl font-extrabold tracking-tight text-primary">
+        <Link to="/" className="flex items-center gap-3">
+          <img src={nhiLogo} alt="Nashville Home Improvements" className="h-16 w-16 rounded-full" />
+          <span className="font-heading text-sm font-extrabold tracking-tight text-secondary">
             NASHVILLE HOME IMPROVEMENTS
           </span>
-        </a>
+        </Link>
         <span className="hidden md:flex items-center gap-1.5 text-sm text-secondary-foreground/80">
           <MapPin className="w-4 h-4 text-primary" />
           710 Cleo Miller Dr, East Nashville, TN 37206
@@ -34,12 +34,12 @@ const TopBar = () => (
           <Phone className="w-5 h-5" />
           (405) 334-9493
         </a>
-        <a
-          href="#schedule"
+        <Link
+          to="/#schedule"
           className="hidden md:inline-flex bg-primary text-primary-foreground font-heading font-bold text-sm px-5 py-2.5 rounded hover:brightness-110 transition-all"
         >
           SCHEDULE FREE INSPECTION
-        </a>
+        </Link>
       </div>
     </div>
   </div>
@@ -107,13 +107,13 @@ const SiteHeader = () => {
                 </li>
               ))}
               <li>
-                <a
-                  href="#schedule"
+                <Link
+                  to="/#schedule"
                   className="block mx-4 my-2 text-center bg-primary text-primary-foreground font-heading font-bold text-sm px-5 py-2.5 rounded hover:brightness-110 transition-all"
                   onClick={() => setMobileOpen(false)}
                 >
                   SCHEDULE FREE INSPECTION
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
