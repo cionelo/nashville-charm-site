@@ -17,7 +17,7 @@ const TopBar = () => (
       <div className="flex items-center gap-6">
         <Link to="/" className="flex items-center gap-3">
           <img src={nhiLogo} alt="Nashville Home Improvements" className="h-16 w-16 rounded-full" />
-          <span className="font-heading text-sm font-extrabold tracking-tight text-secondary">
+          <span className="font-heading text-sm font-extrabold tracking-tight text-primary">
             NASHVILLE HOME IMPROVEMENTS
           </span>
         </Link>
