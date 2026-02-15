@@ -2,17 +2,17 @@ import { ShieldCheck } from "lucide-react";
 
 
 const services = [
-  "Crawl Space Encapsulation",
-  "Crawl Space Vapor Barriers",
-  "Crawl Space Insulation",
-  "Crawl Space Mold Removal",
-  "Crawl Space Waterproofing",
-  "Crawl Space Dehumidifiers",
-  "Crawl Space Sump Pumps",
-  "Crawl Space Vent Insulation",
-  "Crawl Space Repair",
-  "Crawl Space Moisture Remediation",
-  "Crawl Space Drainage Systems",
+  "Encapsulation",
+  "Vapor Barriers",
+  "Insulation",
+  "Mold Removal",
+  "Waterproofing",
+  "Dehumidifiers",
+  "Sump Pumps",
+  "Vent Insulation",
+  "Repair",
+  "Moisture Remediation",
+  "Drainage Systems",
   "FREE Inspections",
 ];
 
@@ -45,9 +45,10 @@ const IntroSection = () => {
               </p>
             </div>
 
-            <h3 id="services" className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-6 scroll-mt-32">
+            <h3 id="services" className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-2 scroll-mt-32">
               Our Comprehensive Crawl Space Services
             </h3>
+            <p className="text-sm text-muted-foreground mb-6">All services listed below are crawl space specific unless otherwise noted.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               {services.map((service) => (
                 <a
