@@ -1,4 +1,4 @@
-import { Phone, MapPin, Mail, Facebook, Youtube, Instagram } from "lucide-react";
+import { Phone, MapPin, Mail, Instagram } from "lucide-react";
 import nhiLogo from "@/assets/nhi-logo.png";
 
 const serviceLinks = [
@@ -43,13 +43,7 @@ const SiteFooter = () => {
               Info@NHITN.com
             </a>
             <div className="flex gap-3 mt-4">
-              <a href="#" className="text-secondary-foreground/50 hover:text-primary transition-colors" aria-label="Facebook">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-secondary-foreground/50 hover:text-primary transition-colors" aria-label="YouTube">
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-secondary-foreground/50 hover:text-primary transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/nashville_home_improvements/reels/" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground/50 hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
