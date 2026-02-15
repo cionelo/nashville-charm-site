@@ -15,11 +15,19 @@ const guarantees = [
 
 const GuaranteesSection = () => {
   return (
-    <section className="bg-secondary text-secondary-foreground py-12 md:py-16">
+    <section id="about-us" className="bg-secondary text-secondary-foreground py-12 md:py-16 scroll-mt-28">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10">
-          Our Guarantees
+        {/* Who We Are */}
+        <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-6">
+          Who We Are
         </h2>
+        <p className="text-secondary-foreground/80 leading-relaxed max-w-3xl mx-auto text-center mb-12">
+          At Nashville Home Improvements, we proudly serve homeowners across Tennessee with expert solutions to protect and enhance their homes. Our services include fencing, drainage systems, crawlspace encapsulations, mold remediation, foundation waterproofing, and custom carpentry. As a trusted local company, we're committed to delivering quality workmanship and reliable results that stand the test of time.
+        </p>
+
+        <h3 className="text-xl md:text-2xl font-heading font-bold text-center mb-10">
+          Our Guarantees
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {guarantees.map((g) => (
             <div

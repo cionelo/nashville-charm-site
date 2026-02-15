@@ -45,7 +45,7 @@ const IntroSection = () => {
               </p>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-6">
+            <h3 id="services" className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-6 scroll-mt-32">
               Our Comprehensive Crawl Space Services
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
