@@ -15,7 +15,7 @@ const guarantees = [
 
 const GuaranteesSection = () => {
   return (
-    <section id="about-us" className="bg-secondary text-secondary-foreground py-12 md:py-16 scroll-mt-28">
+    <section id="about-us" className="bg-secondary text-secondary-foreground py-12 md:py-16 scroll-mt-[14rem] md:scroll-mt-28">
       <div className="container mx-auto px-4">
         {/* Who We Are */}
         <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-6">
