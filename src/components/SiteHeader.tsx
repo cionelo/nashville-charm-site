@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Phone, MapPin, Menu, X } from "lucide-react";
 import nhiLogo from "@/assets/nhi-logo.png";
 
@@ -53,6 +53,27 @@ const TopBar = () => (
 
 const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Scroll to hash after navigation
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [location]);
+
+  const handleHashNav = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    const hashId = href.split("#")[1];
+    if (window.location.pathname === "/") {
+      document.getElementById(hashId)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(href);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50">
@@ -69,19 +90,12 @@ const SiteHeader = () => {
           <ul className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
               const isHash = link.href.includes("#");
-              const hashId = isHash ? link.href.split("#")[1] : "";
-              const handleHashClick = (e: React.MouseEvent) => {
-                if (isHash && window.location.pathname === "/") {
-                  e.preventDefault();
-                  document.getElementById(hashId)?.scrollIntoView({ behavior: "smooth" });
-                }
-              };
               return (
                 <li key={link.label}>
                   {isHash ? (
                     <a
                       href={link.href}
-                      onClick={handleHashClick}
+                      onClick={(e) => handleHashNav(e, link.href)}
                       className="px-3 py-2 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary transition-colors"
                     >
                       {link.label}
@@ -104,20 +118,12 @@ const SiteHeader = () => {
             <ul className="flex flex-col py-2">
               {navLinks.map((link) => {
                 const isHash = link.href.includes("#");
-                const hashId = isHash ? link.href.split("#")[1] : "";
-                const handleHashClick = (e: React.MouseEvent) => {
-                  setMobileOpen(false);
-                  if (isHash && window.location.pathname === "/") {
-                    e.preventDefault();
-                    document.getElementById(hashId)?.scrollIntoView({ behavior: "smooth" });
-                  }
-                };
                 return (
                   <li key={link.label}>
                     {isHash ? (
                       <a
                         href={link.href}
-                        onClick={handleHashClick}
+                        onClick={(e) => { setMobileOpen(false); handleHashNav(e, link.href); }}
                         className="block px-6 py-3 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary hover:bg-nav-foreground/5 transition-colors"
                       >
                         {link.label}
@@ -137,13 +143,7 @@ const SiteHeader = () => {
               <li>
                 <a
                   href="/#schedule"
-                  onClick={(e) => {
-                    setMobileOpen(false);
-                    if (window.location.pathname === "/") {
-                      e.preventDefault();
-                      document.getElementById("schedule")?.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
+                  onClick={(e) => { setMobileOpen(false); handleHashNav(e, "/#schedule"); }}
                   className="block mx-4 my-2 text-center bg-primary text-primary-foreground font-heading font-bold text-sm px-5 py-2.5 rounded hover:brightness-110 transition-all"
                 >
                   SCHEDULE FREE INSPECTION
