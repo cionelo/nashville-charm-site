@@ -34,12 +34,18 @@ const TopBar = () => (
           <Phone className="w-5 h-5" />
           (405) 334-9493
         </a>
-        <Link
-          to="/#schedule"
+        <a
+          href="/#schedule"
+          onClick={(e) => {
+            if (window.location.pathname === "/") {
+              e.preventDefault();
+              document.getElementById("schedule")?.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
           className="hidden md:inline-flex bg-primary text-primary-foreground font-heading font-bold text-sm px-5 py-2.5 rounded hover:brightness-110 transition-all"
         >
           SCHEDULE FREE INSPECTION
-        </Link>
+        </a>
       </div>
     </div>
   </div>
@@ -61,59 +67,87 @@ const SiteHeader = () => {
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
           <ul className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                {link.href.startsWith("/") ? (
-                  <Link
-                    to={link.href}
-                    className="px-3 py-2 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    href={link.href}
-                    className="px-3 py-2 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                )}
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isHash = link.href.includes("#");
+              const hashId = isHash ? link.href.split("#")[1] : "";
+              const handleHashClick = (e: React.MouseEvent) => {
+                if (isHash && window.location.pathname === "/") {
+                  e.preventDefault();
+                  document.getElementById(hashId)?.scrollIntoView({ behavior: "smooth" });
+                }
+              };
+              return (
+                <li key={link.label}>
+                  {isHash ? (
+                    <a
+                      href={link.href}
+                      onClick={handleHashClick}
+                      className="px-3 py-2 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="px-3 py-2 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
         {mobileOpen && (
           <div className="md:hidden bg-nav border-t border-nav-foreground/10">
             <ul className="flex flex-col py-2">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  {link.href.startsWith("/") ? (
-                    <Link
-                      to={link.href}
-                      className="block px-6 py-3 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary hover:bg-nav-foreground/5 transition-colors"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="block px-6 py-3 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary hover:bg-nav-foreground/5 transition-colors"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {link.label}
-                    </a>
-                  )}
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const isHash = link.href.includes("#");
+                const hashId = isHash ? link.href.split("#")[1] : "";
+                const handleHashClick = (e: React.MouseEvent) => {
+                  setMobileOpen(false);
+                  if (isHash && window.location.pathname === "/") {
+                    e.preventDefault();
+                    document.getElementById(hashId)?.scrollIntoView({ behavior: "smooth" });
+                  }
+                };
+                return (
+                  <li key={link.label}>
+                    {isHash ? (
+                      <a
+                        href={link.href}
+                        onClick={handleHashClick}
+                        className="block px-6 py-3 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary hover:bg-nav-foreground/5 transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="block px-6 py-3 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary hover:bg-nav-foreground/5 transition-colors"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
               <li>
-                <Link
-                  to="/#schedule"
+                <a
+                  href="/#schedule"
+                  onClick={(e) => {
+                    setMobileOpen(false);
+                    if (window.location.pathname === "/") {
+                      e.preventDefault();
+                      document.getElementById("schedule")?.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
                   className="block mx-4 my-2 text-center bg-primary text-primary-foreground font-heading font-bold text-sm px-5 py-2.5 rounded hover:brightness-110 transition-all"
-                  onClick={() => setMobileOpen(false)}
                 >
                   SCHEDULE FREE INSPECTION
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
