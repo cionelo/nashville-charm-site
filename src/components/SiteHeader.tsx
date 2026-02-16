@@ -15,7 +15,7 @@ const TopBar = () => (
   <div className="bg-secondary text-secondary-foreground">
     <div className="container mx-auto flex flex-col md:flex-row items-center justify-between py-3 px-4 gap-3">
       <div className="flex items-center gap-6">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" onClick={(e) => { if (window.location.pathname === "/") { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } }} className="flex items-center gap-3">
           <img src={nhiLogo} alt="Nashville Home Improvements" className="h-16 w-16 rounded-full" />
           <span className="font-heading text-sm font-extrabold tracking-tight text-primary">
             NASHVILLE HOME IMPROVEMENTS
@@ -75,6 +75,13 @@ const SiteHeader = () => {
     }
   };
 
+  const handleScrollToTop = (e: React.MouseEvent, targetPath: string) => {
+    if (location.pathname === targetPath) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50">
       <TopBar />
@@ -103,6 +110,7 @@ const SiteHeader = () => {
                   ) : (
                     <Link
                       to={link.href}
+                      onClick={(e) => handleScrollToTop(e, link.href)}
                       className="px-3 py-2 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary transition-colors"
                     >
                       {link.label}
@@ -132,7 +140,7 @@ const SiteHeader = () => {
                       <Link
                         to={link.href}
                         className="block px-6 py-3 text-sm font-semibold uppercase tracking-wide text-nav-foreground/90 hover:text-primary hover:bg-nav-foreground/5 transition-colors"
-                        onClick={() => setMobileOpen(false)}
+                        onClick={(e) => { setMobileOpen(false); handleScrollToTop(e, link.href); }}
                       >
                         {link.label}
                       </Link>
