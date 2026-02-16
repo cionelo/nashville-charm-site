@@ -56,12 +56,14 @@ const SiteHeader = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Scroll to hash after navigation
+  // Scroll to top on route change (non-hash), or scroll to hash
   useEffect(() => {
     if (location.hash) {
       setTimeout(() => {
         document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: "smooth" });
       }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [location]);
 
