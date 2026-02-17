@@ -1,14 +1,30 @@
 import { useState } from "react";
 import { Phone, FileText } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const CTASection = () => {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const { data, error: fnError } = await supabase.functions.invoke("send-inspection-email", {
+        body: formData,
+      });
+      if (fnError) throw fnError;
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Something went wrong. Please call us directly or try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -74,11 +90,13 @@ const CTASection = () => {
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               className="w-full px-4 py-2.5 rounded bg-secondary text-secondary-foreground placeholder:text-secondary-foreground/50 text-sm resize-none"
             />
+            {error && <p className="text-destructive text-sm">{error}</p>}
             <button
               type="submit"
-              className="w-full bg-accent text-accent-foreground font-heading font-bold text-sm px-6 py-3 rounded hover:brightness-110 transition-all"
+              disabled={submitting}
+              className="w-full bg-accent text-accent-foreground font-heading font-bold text-sm px-6 py-3 rounded hover:brightness-110 transition-all disabled:opacity-50"
             >
-              SUBMIT INSPECTION REQUEST
+              {submitting ? "SENDING..." : "SUBMIT INSPECTION REQUEST"}
             </button>
           </form>
         )}
