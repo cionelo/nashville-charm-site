@@ -19,13 +19,13 @@ const Index = () => {
         <HeroBanner />
         <IntroSection />
         <TrustedExpertsSection />
+        <CTASection />
         <ProblemSignsSection />
         <BenefitsSection />
         <WaterIssuesSection />
         <FAQSection />
-        <AboutCitySection />
         <GuaranteesSection />
-        <CTASection />
+        <AboutCitySection />
       </main>
       <SiteFooter />
     </div>
