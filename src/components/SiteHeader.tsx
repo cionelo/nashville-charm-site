@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Phone, MapPin, Menu, X } from "lucide-react";
-import nhiLogo from "@/assets/nhi-logo.png";
+import nhiLogo from "@/assets/nhi-logo-2.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
