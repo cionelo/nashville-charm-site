@@ -1,4 +1,5 @@
 import { ShieldCheck } from "lucide-react";
+import crawlspaceWorker from "@/assets/crawlspace-worker.png";
 
 
 const services = [
@@ -45,24 +46,36 @@ const IntroSection = () => {
               </p>
             </div>
 
-            <h3 id="services" className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-2 scroll-mt-[14rem] md:scroll-mt-32">
-              Our Comprehensive Crawl Space Services
-            </h3>
-            <p className="text-sm text-muted-foreground mb-6">All services listed below are crawl space specific unless otherwise noted.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-              {services.map((service) => (
-                <a
-                  key={service}
-                  href="#"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors group"
-                >
-                  <ShieldCheck className="w-5 h-5 text-primary flex-shrink-0 group-hover:text-accent transition-colors" />
-                  <span className="text-sm font-medium">{service}</span>
-                </a>
-              ))}
             </div>
-          </div>
 
+        </div>
+      </div>
+
+      {/* Services section with background image */}
+      <div className="relative mt-0">
+        <img
+          src={crawlspaceWorker}
+          alt="Crawl space worker inspecting insulation"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-secondary/80" />
+        <div className="relative z-10 container mx-auto px-4 py-12 md:py-16">
+          <h3 id="services" className="text-xl md:text-2xl font-heading font-bold text-primary-foreground mb-2 scroll-mt-[14rem] md:scroll-mt-32">
+            Our Comprehensive Crawl Space Services
+          </h3>
+          <p className="text-sm text-primary-foreground/70 mb-6">All services listed below are crawl space specific unless otherwise noted.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {services.map((service) => (
+              <a
+                key={service}
+                href="#"
+                className="flex items-center gap-2 text-primary-foreground/90 hover:text-primary transition-colors group"
+              >
+                <ShieldCheck className="w-5 h-5 text-primary flex-shrink-0 group-hover:text-primary transition-colors" />
+                <span className="text-sm font-medium">{service}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
