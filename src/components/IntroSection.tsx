@@ -69,7 +69,7 @@ const IntroSection = () => {
               <a
                 key={service}
                 href="#"
-                className="flex items-center gap-2 text-primary-foreground/90 hover:text-primary transition-colors group"
+                className="flex items-center gap-2 text-primary-foreground/90 hover:text-primary transition-all duration-200 hover:scale-105 hover:bg-primary-foreground/10 rounded-md px-2 py-1.5 -mx-2 group"
               >
                 <ShieldCheck className="w-5 h-5 text-primary flex-shrink-0 group-hover:text-primary transition-colors" />
                 <span className="text-sm font-medium">{service}</span>
