@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Phone, FileText } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 const CTASection = () => {
   const [showForm, setShowForm] = useState(false);
@@ -14,10 +13,12 @@ const CTASection = () => {
     setSubmitting(true);
     setError("");
     try {
-      const { data, error: fnError } = await supabase.functions.invoke("send-inspection-email", {
-        body: formData,
+      const response = await fetch("https://formspree.io/f/mbdawvjk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-      if (fnError) throw fnError;
+      if (!response.ok) throw new Error("Form submission failed");
       setSubmitted(true);
     } catch (err) {
       console.error("Submission error:", err);
