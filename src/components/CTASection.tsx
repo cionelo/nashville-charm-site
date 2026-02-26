@@ -13,7 +13,7 @@ const CTASection = () => {
     setSubmitting(true);
     setError("");
     try {
-      const response = await fetch("https://formspree.io/f/mbdawvjk", {
+      const response = await fetch("https://formspree.io/f/maqdvgjp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
